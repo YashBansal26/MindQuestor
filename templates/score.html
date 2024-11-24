@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindQuestor - Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="score-container">
+        <h2>Your Score</h2>
+        {% if level == 4 %}
+            <div class="pie-chart">
+                <div class="pie-chart-circle" style="--score: {{ marksper }};"></div>
+            </div>
+            
+            <p>You scored <span id="score">{{ marks }}</span> marks out of 24</p>
+
+            
+            <div class="pie-chart">
+                <div class="pie-chart-circle" style="--score: {{ scoreper }};"></div>
+            </div>
+            
+            <p>You scored <span id="score">{{ score }}</span> score out of 240</p>
+
+        {% else %}
+            <div class="pie-chart">
+                <div class="pie-chart-circle" style="--score: {{ marks }}0;"></div>
+            </div>
+            
+            <p>You scored <span id="score">{{ marks }}</span> marks out of 10</p>
+
+        {% endif %}
+
+        <a href="{{url_for('home')}}" class="home-button">Home</a>
+<!-- 
+        <form>
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="5" cols="40" placeholder="Write your feedback here..."></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form> -->
+    </div>
+    <br>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'styles.css')}}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="profile">
+            <h2>My Profile</h2>
+            <p><strong>Name:</strong> {{current_user.user_name}}</p>
+            <p><strong>Email:</strong> {{current_user.Email}}</p>
+
+        
+            <form action="/logout">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </div>
+        <div class="test-history">
+            <h2>Test History</h2>
+            <h4> Easy </h4>
+            <ul>
+                <li>Math Test - Score: {{userMa.test_1_score}} /10</li>
+                <li>Physics Test - Score: {{userPh.test_1_score}} /10</li>
+                <li>Python Test - Score: {{userPy.test_1_score}} /10</li>
+                <li>Java Test - Score: {{userJa.test_1_score}} /10</li>
+            </ul>
+            <h4> Medium </h4>
+            <ul>
+                <li>Math Test - Score: {{userMa.test_2_score}} /10</li>
+                <li>Physics Test - Score: {{userPh.test_2_score}} /10</li>
+                <li>Python Test - Score: {{userPy.test_2_score}} /10</li>
+                <li>Java Test - Score: {{userJa.test_2_score}} /10</li>
+            </ul>
+            <h4> Hard </h4>
+            <ul>
+                <li>Math Test - Score: {{userMa.test_3_score}} /10</li>
+                <li>Physics Test - Score: {{userPh.test_3_score}} /10</li>
+                <li>Python Test - Score: {{userPy.test_3_score}} /10</li>
+                <li>Java Test - Score: {{userJa.test_3_score}} /10</li>
+            </ul>
+            <h4> Mixed </h4>
+            <ul>
+                <li>Math Test - Score: {{userMa.test_4_score2}} /240</li>
+                <li>Physics Test - Score: {{userPh.test_4_score2}} /240</li>
+                <li>Python Test - Score: {{userPy.test_4_score2}} /240</li>
+                <li>Java Test - Score: {{userJa.test_4_score2}} /240</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

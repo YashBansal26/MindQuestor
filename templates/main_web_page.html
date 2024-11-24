@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindQuestor - Home</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'main.css')}}">
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">
+            <h1>MindQuestor</h1>
+        </div>
+        <nav>
+            <ul>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{url_for('account')}}">{{current_user.user_name}}</a></li>
+                {% else %}
+                    <li><a href="{{url_for('LogIn')}}">Log In</a></li>
+                    <li><a href="{{url_for('SignUp')}}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+   
+    <div class="main-content">
+
+      
+        <div class="about-section">
+            <h2>About MindQuestor</h2>
+            <p>MindQuestor is an interactive platform designed to help students strengthen their knowledge in various subjects through quizzes and engaging content. Each subject features multiple levels to challenge and improve your understanding. Join us to track your progress, review past quizzes.</p>
+        </div>
+
+        
+        <div class="divider"></div>
+
+     
+        <div class="subject-container">
+            <a href="/subjects/math" class="subject-box">Engineering Mathematics</a>
+            <a href="/subjects/physics" class="subject-box">Electromagnetism and Mechanics</a>
+            <a href="/subjects/python" class="subject-box">Computational Thinking & Programming</a>
+            <a href="/subjects/java" class="subject-box">Java</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
